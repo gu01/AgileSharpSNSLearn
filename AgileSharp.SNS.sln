@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D4B61580-301E-43B3-801C-A377BDC1A534}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileSharp.SNS.Infrastructure", "AgileSharp.SNS.Infrastructure\AgileSharp.SNS.Infrastructure.csproj", "{4D3E3841-91A3-4959-8628-A57C7871B540}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileSharp.SNS.Model", "AgileSharp.SNS.Model\AgileSharp.SNS.Model.csproj", "{771902AE-40A9-4040-8B53-4071B18E27CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileSharp.SNS.Services", "AgileSharp.SNS.Services\AgileSharp.SNS.Services.csproj", "{17133D7A-0F02-4C1C-B19D-303FCBF7DB9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileSharp.SNS.Repository", "AgileSharp.SNS.Repository\AgileSharp.SNS.Repository.csproj", "{1BA3E6BD-846A-4F27-BBA5-F57BC3DC4C2C}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "AgileSharp.SNS.Design", "AgileSharp.SNS.Design\AgileSharp.SNS.Design.modelproj", "{29109256-85E6-463C-8817-F52CEC506499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileSharp.SNS.WebUI", "AgileSharp.SNS.WebUI\AgileSharp.SNS.WebUI.csproj", "{0643B7B1-8192-4B49-ACEE-E83ADD1E70DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileSharp.SNS.Tests", "AgileSharp.SNS.Tests\AgileSharp.SNS.Tests.csproj", "{9E91AC07-86B3-459D-ACF8-E57942751040}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D3E3841-91A3-4959-8628-A57C7871B540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D3E3841-91A3-4959-8628-A57C7871B540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D3E3841-91A3-4959-8628-A57C7871B540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D3E3841-91A3-4959-8628-A57C7871B540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771902AE-40A9-4040-8B53-4071B18E27CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771902AE-40A9-4040-8B53-4071B18E27CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771902AE-40A9-4040-8B53-4071B18E27CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771902AE-40A9-4040-8B53-4071B18E27CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17133D7A-0F02-4C1C-B19D-303FCBF7DB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17133D7A-0F02-4C1C-B19D-303FCBF7DB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17133D7A-0F02-4C1C-B19D-303FCBF7DB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17133D7A-0F02-4C1C-B19D-303FCBF7DB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA3E6BD-846A-4F27-BBA5-F57BC3DC4C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA3E6BD-846A-4F27-BBA5-F57BC3DC4C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA3E6BD-846A-4F27-BBA5-F57BC3DC4C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA3E6BD-846A-4F27-BBA5-F57BC3DC4C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29109256-85E6-463C-8817-F52CEC506499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29109256-85E6-463C-8817-F52CEC506499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29109256-85E6-463C-8817-F52CEC506499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29109256-85E6-463C-8817-F52CEC506499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0643B7B1-8192-4B49-ACEE-E83ADD1E70DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0643B7B1-8192-4B49-ACEE-E83ADD1E70DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0643B7B1-8192-4B49-ACEE-E83ADD1E70DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0643B7B1-8192-4B49-ACEE-E83ADD1E70DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E91AC07-86B3-459D-ACF8-E57942751040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E91AC07-86B3-459D-ACF8-E57942751040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E91AC07-86B3-459D-ACF8-E57942751040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E91AC07-86B3-459D-ACF8-E57942751040}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = AgileSharp.SNS1.vsmdi
+	EndGlobalSection
+EndGlobal

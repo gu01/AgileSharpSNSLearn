@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AgileSharpSNS" Class="AgileSharpSNSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sql2008;Initial Catalog=AgileSharpSNS;Integrated Security=True" SettingsObjectName="AgileSharp.SNS.Repository.Properties.Settings" SettingsPropertyName="AgileSharpSNSConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tb_AccountPermissions" Member="tb_AccountPermissions">
+    <Type Name="tb_AccountPermission">
+      <Column Name="apId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PermissionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tb_Account_tb_AccountPermission" Member="tb_Account" ThisKey="AccountId" OtherKey="AccountId" Type="tb_Account" IsForeignKey="true" />
+      <Association Name="tb_Permission_tb_AccountPermission" Member="tb_Permission" ThisKey="PermissionId" OtherKey="PermissionId" Type="tb_Permission" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_VisibilityLevels" Member="tb_VisibilityLevels">
+    <Type Name="tb_VisibilityLevel">
+      <Column Name="VisibilityLevelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tb_VisibilityLevel_tb_ProductAttribute" Member="tb_ProductAttributes" ThisKey="VisibilityLevelId" OtherKey="VisibilityLevelId" Type="tb_ProductAttribute" />
+      <Association Name="tb_VisibilityLevel_tb_ProfileAttribute" Member="tb_ProfileAttributes" ThisKey="VisibilityLevelId" OtherKey="VisibilityLevelId" Type="tb_ProfileAttribute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Accounts" Member="tb_Accounts">
+    <Type Name="tb_Account">
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailVerfied" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TermId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgreedToTermsDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Association Name="tb_Account_tb_AccountPermission" Member="tb_AccountPermissions" ThisKey="AccountId" OtherKey="AccountId" Type="tb_AccountPermission" />
+      <Association Name="tb_Account_tb_Alert" Member="tb_Alerts" ThisKey="AccountId" OtherKey="AccountId" Type="tb_Alert" />
+      <Association Name="tb_Account_tb_Product" Member="tb_Products" ThisKey="AccountId" OtherKey="AccountId" Type="tb_Product" />
+      <Association Name="tb_Account_tb_Profile" Member="tb_Profiles" ThisKey="AccountId" OtherKey="AccountId" Type="tb_Profile" />
+      <Association Name="tb_Term_tb_Account" Member="tb_Term" ThisKey="TermId" OtherKey="TermId" Type="tb_Term" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Alerts" Member="tb_Alerts">
+    <Type Name="tb_Alert">
+      <Column Name="AlertId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="AlertTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsHidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="tb_Account_tb_Alert" Member="tb_Account" ThisKey="AccountId" OtherKey="AccountId" Type="tb_Account" IsForeignKey="true" />
+      <Association Name="tb_AlertType_tb_Alert" Member="tb_AlertType" ThisKey="AlertTypeId" OtherKey="AlertTypeId" Type="tb_AlertType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_AlertTypes" Member="tb_AlertTypes">
+    <Type Name="tb_AlertType">
+      <Column Name="AlertTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tb_AlertType_tb_Alert" Member="tb_Alerts" ThisKey="AlertTypeId" OtherKey="AlertTypeId" Type="tb_Alert" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Permissions" Member="tb_Permissions">
+    <Type Name="tb_Permission">
+      <Column Name="PermissionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tb_Permission_tb_AccountPermission" Member="tb_AccountPermissions" ThisKey="PermissionId" OtherKey="PermissionId" Type="tb_AccountPermission" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ProductAttributes" Member="tb_ProductAttributes">
+    <Type Name="tb_ProductAttribute">
+      <Column Name="ProductAttributeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FieldName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="VisibilityLevelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tb_VisibilityLevel_tb_ProductAttribute" Member="tb_VisibilityLevel" ThisKey="VisibilityLevelId" OtherKey="VisibilityLevelId" Type="tb_VisibilityLevel" IsForeignKey="true" />
+      <Association Name="tb_Product_tb_ProductAttribute" Member="tb_Product" ThisKey="ProductId" OtherKey="ProductId" Type="tb_Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ProductCategories" Member="tb_ProductCategories">
+    <Type Name="tb_ProductCategory">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ViewCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Association Name="tb_ProductCategory_tb_Product" Member="tb_Products" ThisKey="CategoryId" OtherKey="CategoryId" Type="tb_Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Products" Member="tb_Products">
+    <Type Name="tb_Product">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Icon" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="DetailImage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ViewCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DownloadCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsHot" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsRecommend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tb_Product_tb_ProductAttribute" Member="tb_ProductAttributes" ThisKey="ProductId" OtherKey="ProductId" Type="tb_ProductAttribute" />
+      <Association Name="tb_Account_tb_Product" Member="tb_Account" ThisKey="AccountId" OtherKey="AccountId" Type="tb_Account" IsForeignKey="true" />
+      <Association Name="tb_ProductCategory_tb_Product" Member="tb_ProductCategory" ThisKey="CategoryId" OtherKey="CategoryId" Type="tb_ProductCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ProfileAttributes" Member="tb_ProfileAttributes">
+    <Type Name="tb_ProfileAttribute">
+      <Column Name="ProfileAttributeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FieldName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="VisibilityLevelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Association Name="tb_VisibilityLevel_tb_ProfileAttribute" Member="tb_VisibilityLevel" ThisKey="VisibilityLevelId" OtherKey="VisibilityLevelId" Type="tb_VisibilityLevel" IsForeignKey="true" />
+      <Association Name="tb_Profile_tb_ProfileAttribute" Member="tb_Profile" ThisKey="ProfileId" OtherKey="ProfileId" Type="tb_Profile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Profiles" Member="tb_Profiles">
+    <Type Name="tb_Profile">
+      <Column Name="ProfileId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="HomePageUrl" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IMQQ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IMMSN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Avatar" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Association Name="tb_Profile_tb_ProfileAttribute" Member="tb_ProfileAttributes" ThisKey="ProfileId" OtherKey="ProfileId" Type="tb_ProfileAttribute" />
+      <Association Name="tb_Account_tb_Profile" Member="tb_Account" ThisKey="AccountId" OtherKey="AccountId" Type="tb_Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Terms" Member="tb_Terms">
+    <Type Name="tb_Term">
+      <Column Name="TermId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Terms" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsCurrentUsed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tb_Term_tb_Account" Member="tb_Accounts" ThisKey="TermId" OtherKey="TermId" Type="tb_Account" />
+    </Type>
+  </Table>
+</Database>

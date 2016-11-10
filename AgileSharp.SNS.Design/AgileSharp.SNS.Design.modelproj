@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29109256-85e6-463c-8817-f52cec506499}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>AgileSharp.SNS.Design</Name>
+    <RootNamespace>AgileSharp.SNS.Design</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="false" />
+  <ItemGroup>
+    <Content Include="Account\Account.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Account\Account.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Account\Account.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Account\Account.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Account\Account.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Account\Account.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Account\Login.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Account\Login.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Account\Login.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Account\NonVerfiedAccountLogin.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Account\NonVerfiedAccountLogin.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Account\NonVerfiedAccountLogin.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Account\Permission.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Account\Permission.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Account\Permission.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Account\RecoverPassword.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Account\RecoverPassword.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Account\RecoverPassword.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Account\Register.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Account\Register.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Account\Register.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Account\Term.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Account\Term.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Account\Term.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Account\VerfiedAccountLogin.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Account\VerfiedAccountLogin.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Account\VerfiedAccountLogin.sequencediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\AgileSharp.SNS.Design.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="Account" />
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="AgileSharpSNSLogicLayer.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="AgileSharpSNSLogicLayer..layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AgileSharpSNSLogicLayer.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="AgileSharpSNSLogicLayer..layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>AgileSharpSNSLogicLayer.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="AgileSharpSNSLogicLayerDetail.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="AgileSharpSNSLogicLayerDetail.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AgileSharpSNSLogicLayerDetail.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="AgileSharpSNSLogicLayerDetail.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>AgileSharpSNSLogicLayerDetail.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

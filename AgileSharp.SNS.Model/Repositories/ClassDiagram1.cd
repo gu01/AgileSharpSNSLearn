@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="AgileSharp.SNS.Model.Repositories.IAccountRepository">
+    <Position X="3" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAMAABAAAAAAAAAAAAAAAAAEAAAAAAAAAIAIBAAA=</HashCode>
+      <FileName>Repositories\IAccountRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AgileSharp.SNS.Model.Repositories.ITermRepository">
+    <Position X="5.25" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAQAAAAAAAAAAQAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ITermRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AgileSharp.SNS.Model.Repositories.IPermissionRepository">
+    <Position X="5.25" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAggAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPermissionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>

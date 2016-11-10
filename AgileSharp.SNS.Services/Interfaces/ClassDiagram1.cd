@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="AgileSharp.SNS.Services.Interfaces.IAccountService">
+    <Position X="3" Y="1.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAggAAAAAAAAAAAAABAAAAAAAAABAgAABAAQASAgECI=</HashCode>
+      <FileName>Interfaces\IAccountService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>

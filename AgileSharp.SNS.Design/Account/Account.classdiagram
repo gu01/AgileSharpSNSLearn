@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="fd0a932f-07fc-4bf1-9b45-b08fcd4d545a" name="AccountService" linkedPackageId="901bd95d-df46-4bb1-bd43-5baa1b6dd2c4" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e95b4b76-ec9f-4542-a59d-80faa8e29447" name="IAccountService" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="05a7914d-3035-4a40-a0fc-6631be3acaa6" />
+        <ownedAttributes>
+          <property Id="60787ff5-1278-4907-b852-5268d63f3046" name="IAccountRepository" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3a5c619d-2e22-4556-93d7-b432ff523db2" />
+          </property>
+          <property Id="da1746d4-0980-4da1-b701-8d47877c884e" name="IAuthenticateStrategy" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7a13dc83-6e89-4185-b8f7-014a368319e6" />
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation Id="b0d2469b-21aa-42fe-9975-5bc8960fa49d" name="Login" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="efbd7d2b-0d68-4343-afb0-cc510a5634aa" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7c65a1ee-0762-42c5-8876-f614b2865973" direction="Return" isUnique="false">
+                  <elementDefinition Id="4218f9b8-48d9-40b3-852a-afe4932fc21e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8b88d631-f535-4d30-bbba-1595d0f1aa6e" LastKnownName="LoginResult" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3b648154-0f77-4236-8f3f-3dacdd7239ca" name="AuthenticateType type" direction="In" isUnique="false">
+                  <elementDefinition Id="ae8be811-4492-4487-9df6-f4317976c6ef" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6ec69319-bb4f-463d-8ff9-499eef31c138" name="string email" direction="In" isUnique="false">
+                  <elementDefinition Id="621eee27-88a6-45c5-bc12-987f3d94f054" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3daf834a-b1c4-4f72-bf34-cd81dbab02a0" name="string password" direction="In" isUnique="false">
+                  <elementDefinition Id="977625dc-01d4-4ec3-a4d3-97cee5c104c1" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bd307630-dbd1-46f8-b3ec-d44e6ed0a77c" name="SaveAccount" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f4ec29f5-a734-48f5-85a5-28dfb1b8bf58" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="15a7cea1-c7e9-4e24-ae62-fd53d326e84d" direction="Return" isUnique="false">
+                  <elementDefinition Id="ddddbe43-ff5b-4564-a768-e8570d08c30b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b1dffd8f-89fb-475f-8dca-7d67eb4c1cec" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c81d404d-f77f-44b4-bb23-4cbf6d0b0ca8" name="Account newAccount" direction="In" isUnique="false">
+                  <elementDefinition Id="d18c2a23-634c-4166-bb56-c405a6dff090" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="585d193b-90d1-4930-9b24-be25f4a43499" name="Search" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="774f8447-1b5e-4a87-9a15-3bc9d11b10b2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="594f0c46-2014-4137-8e62-50d496f77d78" direction="Return" isUnique="false">
+                  <elementDefinition Id="5b68e442-a2d6-4c16-b09c-ec100693d57e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7e62981d-e6ad-4e22-81db-b00a47e81c63" LastKnownName="Lis&lt;Account&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="01d6fb06-5a86-44d5-8a78-95425e807915" name="string username" direction="In" isUnique="false">
+                  <elementDefinition Id="03c74729-00e5-4f85-83bf-6208e966317c" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a87f9a00-ed53-40f6-a5e4-f983c4c0220b" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="237d059d-1054-49d1-8ff0-e1ec50bf8267" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2349a615-6e68-4b39-9530-a5e1691a4cd6" name="int requestSize" direction="In" isUnique="false">
+                  <elementDefinition Id="4938afe7-d5cc-471f-a9e6-e944b5e01044" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="91388eef-f464-471e-bc9a-35df75161049" name="ref int count" direction="In" isUnique="false">
+                  <elementDefinition Id="51c52181-172d-48a1-b97f-8fedd1b32966" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c032d162-91a1-42e8-be15-d809da15adf0" name="RecoverPassword" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bfa53b79-77e7-457a-9a54-e453c795e69a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="89082456-0fa1-445c-8e54-544b5ab12904" direction="Return" isUnique="false">
+                  <elementDefinition Id="ce60c7d1-031f-4318-b9b9-0e857617c548" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b1dffd8f-89fb-475f-8dca-7d67eb4c1cec" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="34d423ca-1e5b-4f09-88ce-e1e70dcf1662" name="string email" direction="In" isUnique="false">
+                  <elementDefinition Id="1b454402-c75b-41e3-a196-535252a60752" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="813e5fbd-ae0d-4047-95dd-f96dc4af5324" name="DeleteAccount" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="23de166d-8677-4c9c-a56c-f2c2ba092ce8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0407469d-0d66-4b3f-92ba-49ae3ebb6e14" name="Account account" direction="In" isUnique="false">
+                  <elementDefinition Id="6f28f7a4-be0a-4fbc-b1f4-3396200fed8f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1a987acf-3e02-41c5-a6b7-8e10fbdfb2b6" direction="Return" isUnique="false">
+                  <elementDefinition Id="04a19dbf-f638-4503-8f05-7733fac77495" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b1dffd8f-89fb-475f-8dca-7d67eb4c1cec" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2bce01b3-0f8a-48ee-995e-c7388a9b0f33" name="UsernameInUsed" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="647cf024-e11d-4ee3-a49c-59c96c9a6d96" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7301f341-e9a9-48bd-a82f-90b86e1b9994" name="string username" direction="In" isUnique="false">
+                  <elementDefinition Id="b74b7226-1743-499c-bbe3-4f2c3a4f3951" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e4d99667-4abf-430a-a9d4-1df43651717c" direction="Return" isUnique="false">
+                  <elementDefinition Id="e2a9ff05-c47c-4ffd-9ff4-49f2e6fd9e76" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b1dffd8f-89fb-475f-8dca-7d67eb4c1cec" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b220e643-8677-468e-9273-cba288ea76cf" name="EmailInUsed" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9f2ee9e1-2ef1-4682-9b3a-f1b5aa4abdc9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d5cc74a1-01cc-4720-8ff1-652168d3544f" name="string email" direction="In" isUnique="false">
+                  <elementDefinition Id="bf7ac7a6-5b79-40d0-b976-cdff2766ac9e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c931ba99-3b0e-404f-92ee-45473c9529b6" direction="Return" isUnique="false">
+                  <elementDefinition Id="36b4bbce-d21b-4c42-a2e1-48ccc60461fa" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b1dffd8f-89fb-475f-8dca-7d67eb4c1cec" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="56ba47e3-54d3-4303-97dd-ae109ce0b39d" name="GetProfileByAccount" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="32e0797e-6337-474a-8c2f-77ccf19e9451" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="931177db-65bf-4dce-b8b2-48367b758118" name="string email" direction="In" isUnique="false">
+                  <elementDefinition Id="3f155e5b-7205-45f3-90a2-203861c730d1" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e2e82363-219b-402c-9805-2d418f7506b8" name="SaveProfile" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5a7479b6-565d-450b-a7c6-0ca549fa680e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f1460d46-fdec-4707-b8da-4990b6ed9c12" name="Profile profile" direction="In" isUnique="false">
+                  <elementDefinition Id="89723229-04e1-49e1-b67f-61763fbe0f4a" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1e339bd2-a25c-409d-975d-bcf556d517e1" name="List&lt;ProfileAttribute&gt; attributes" direction="In" isUnique="false">
+                  <elementDefinition Id="fdbaabc5-a8a0-4d50-ac2f-76f4265a7042" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fed9c283-f65f-4082-a66f-2c30a09af756" name="Register" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c8e67b74-55b6-4748-8a6b-60dc0fb6c694" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fb16a5b8-6a38-469c-a1c0-25bcb9e72c04" name="Account account" direction="In" isUnique="false">
+                  <elementDefinition Id="2728cdb1-d620-4d3b-b17a-731995757d1f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="06f7888c-4d0e-497b-be5a-4a4c6af4545b" direction="Return" isUnique="false">
+                  <elementDefinition Id="407eec95-0105-43f7-84d0-52f56d033537" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b1dffd8f-89fb-475f-8dca-7d67eb4c1cec" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="ec8a0055-dde6-4767-802e-1dafeeaca844" name="ActiveAccount" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="19aa005b-b84f-4704-8b53-0751cca93b49" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6b7358c1-5d5a-468e-9260-34e6646eeef4" name="Account account" direction="In" isUnique="false">
+                  <elementDefinition Id="64d43083-bab6-41c8-8596-aa1ef0d9a44c" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="979af611-55fa-4ed2-ac06-41032aa7a35a" direction="Return" isUnique="false">
+                  <elementDefinition Id="e4b239ab-6b61-4137-b030-7d7f7fcac7f7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b1dffd8f-89fb-475f-8dca-7d67eb4c1cec" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="709454b9-17f0-4f62-b905-d4a9f3f23339" name="IAccountRepository" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="40bf0c10-bb5e-43d4-9651-59020a5672eb" />
+        <ownedOperations>
+          <operation Id="ff7502fe-2f48-4012-81aa-f9538f4bfe93" name="Save" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ba140613-d16a-4d92-9481-712ad5284bdf" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a22d408f-8388-4fba-b01a-d1abd7ba3007" name="Account" direction="In" isUnique="false">
+                  <elementDefinition Id="c5f3b4b8-f9d9-4ac3-8ae0-96d1eddca3e4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b9a49472-f7cc-42cb-848b-7ee0ea2627d9" name="GetAccountByUsername" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3bc46ac3-203e-4193-be07-7b5376f8ad4e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c570f4bf-1ece-4e0a-98a4-f81a00d950cb" name="string username" direction="In" isUnique="false">
+                  <elementDefinition Id="bf6932dd-d0ff-4625-8a67-f8f031316abf" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="136bae81-6f7e-4461-ae6e-9b041f16076d" name="GetAccountByEmail" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fec3a4aa-afbb-478c-92e7-7b4b11d60e04" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="855bee58-b9b4-469b-975d-9a5edcfdf6a4" name="string email" direction="In" isUnique="false">
+                  <elementDefinition Id="1c3a81d5-a654-45aa-9641-96a401a39ef9" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c96fcd84-56f5-4a3c-ba5b-7f32f25b8222" name="GetAll" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9ed049eb-6e6a-4879-abb9-d431da99fe62" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="26019276-4209-4f31-acfa-700a12679628" name="string username" direction="In" isUnique="false">
+                  <elementDefinition Id="7453ede2-3bcb-44a9-aefe-765c57fecdb2" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5b50d07c-e8db-494a-9893-1838d72e179c" name="int startIndex" direction="In" isUnique="false">
+                  <elementDefinition Id="c09292cd-c108-483f-be8c-f616245d4756" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b7eefef2-25b2-404a-9261-8b67caefbbb7" name="int requestSize" direction="In" isUnique="false">
+                  <elementDefinition Id="1d8913d6-ecd6-4026-8461-526f63a52be5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7135edfb-58df-46e9-b7d1-c1500b269411" name="ref int totalCount" direction="In" isUnique="false">
+                  <elementDefinition Id="a242b251-2205-4aa9-9581-3c28ef2c2f7d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4978baa2-74ce-44a0-9d9e-335046b69408" name="Delete" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c7857e9e-4478-4a8a-baec-4110df22a82e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="afd80ae2-0b7a-4417-9262-7fdbcf6ee1ed" name="int accountId" direction="In" isUnique="false">
+                  <elementDefinition Id="d54b16f2-7805-4293-a18a-08655ef22a88" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="60074769-3414-4b1f-ba47-76ed4dcf27e5" name="AuthenticateType" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0a30bee3-0986-4b24-9c63-76318a9f8ac8" />
+        <ownedLiterals>
+          <enumerationLiteral Id="9b730f81-9eba-4dd6-b97a-156e9a9adf7c" name="Default">
+            <elementDefinition Id="4972b5ba-7e11-4e35-af81-09dc11170c5d" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="1c6e1018-631d-4b0b-b73e-2a8d19e25599" name="Google">
+            <elementDefinition Id="08244340-ec6e-442f-886c-c0553d203502" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="87b65db7-d116-4b99-8d61-fb239f828af1" name="Yahoo">
+            <elementDefinition Id="6dc56a81-92a9-434e-9ff6-34d1837a047e" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="62c00a5b-b96a-4ac2-af99-57dadf039b9c" name="Account" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eac24d5e-5b55-49f2-86e8-b6e260a54337" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="7e62981d-e6ad-4e22-81db-b00a47e81c63" name="Lis&lt;Account&gt;" isAbstract="false" isLeaf="false" cachedFullName="Lis&lt;Account&gt;">
+        <elementDefinition Id="03503cd6-9348-48ef-832c-94507a160c42" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b1dffd8f-89fb-475f-8dca-7d67eb4c1cec" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="fb3c3db1-04aa-46cf-805c-de0a70f7855c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ab39e8a3-54c2-4e57-b4e4-d8a3ab0ba4ea" name="Account" isAbstract="false" isLeaf="false" cachedFullName="AgileSharp.SNS.Design::Account">
+        <elementDefinition Id="eac24d5e-5b55-49f2-86e8-b6e260a54337" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="81e51cbc-3cc3-4daa-83a7-bedf9afe7a92" name="LoginResult" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7125f096-d481-4d70-8cb0-27a648a6a637" />
+        <ownedAttributesInternal>
+          <property Id="dae308b5-001c-4923-b2e9-06d73180fd95" name="CurrentUser" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="12be7b06-d166-4009-8022-79f27a99439f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ab39e8a3-54c2-4e57-b4e4-d8a3ab0ba4ea" LastKnownName="Account" />
+            </type_NamedElement>
+          </property>
+          <property Id="adad4cdd-038c-4d1b-8a9d-88f30abf40b3" name="ErrorMessage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="483b17c3-5ba1-4410-b3db-a90c90cf3e0b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fd22ec37-0c90-429b-a0c3-7ac6b46bd84a" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="6fa5458d-56e6-4e71-892a-8bea5e0b6f4d" name="IsSuccess" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ab531932-892f-4100-86a2-6f5ce32039ba" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="b1dffd8f-89fb-475f-8dca-7d67eb4c1cec" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="8b88d631-f535-4d30-bbba-1595d0f1aa6e" name="LoginResult" isAbstract="false" isLeaf="false" cachedFullName="AgileSharp.SNS.Design::LoginResult">
+        <elementDefinition Id="7125f096-d481-4d70-8cb0-27a648a6a637" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="50d92f33-3b39-4d7f-b3aa-15df8386f3e7" name="AuthenticateFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="265fba6a-3083-4593-b217-511bbe5f76ec" />
+        <suppliersInternal>
+          <dependency Id="0819fb0b-d6b2-47ae-9b6d-3c710e134872">
+            <interfaceMoniker Id="2762d7ab-f7bb-4940-9da5-71fe82d75bc6" LastKnownName="IAuthenticateStrategy" />
+            <elementDefinition Id="639eb13c-4aa9-4359-a0f0-0d58702d215b" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="9289818f-a500-4440-b2a2-ca595a9eb6b8" name="CreateAuthentiacte" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6b02d76f-cdd4-4d0a-8656-8d0a1dd3218a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8544ebb2-b4c1-436e-8fcd-9639670404b3" name="AuthenticateType type" direction="In" isUnique="false">
+                  <elementDefinition Id="54ec1825-569b-473b-ab56-ccdbc042ead6" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="2762d7ab-f7bb-4940-9da5-71fe82d75bc6" name="IAuthenticateStrategy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e9e9dbd1-c807-4d1e-84d0-e8032f18e295" />
+        <ownedOperations>
+          <operation Id="cebae5a3-e355-4c91-af32-29c523fbd167" name="Validate" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7dc37359-4aac-48b7-abb8-bd3acc3a5588" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="faa4f62b-6eb4-4b8d-aeb4-791fbac885c3" name="string email" direction="In" isUnique="false">
+                  <elementDefinition Id="183ad0f1-411a-4537-b282-c8b22131b517" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f0f95a1-e270-4e34-9041-239035c08d68" name="string password" direction="In" isUnique="false">
+                  <elementDefinition Id="8e9a54f3-0712-4fd9-acf7-d330b120b0bf" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="fd22ec37-0c90-429b-a0c3-7ac6b46bd84a" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="19cf446c-c138-4e1e-85fc-dd9656aae42e" name="IProfileRepository" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dc7aacdb-cb4b-46a1-b513-67c897143473" />
+        <ownedOperations>
+          <operation Id="02878c36-6525-4992-94cb-e6bdb21e975d" name="GetProfileByAccountId" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c9d54488-8698-4d6d-b267-4aaf8e5a7b30" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d5f18cae-68e5-4e34-8b43-0c54f3b81559" name="int accountId" direction="In" isUnique="false">
+                  <elementDefinition Id="d574be6e-57b9-47a6-8907-d3ac4e54b790" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="64518dca-3a95-4601-b243-d82bff7ea443" name="GetProfileAttributesByProfile" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ffa59941-bbbe-4bd2-9fca-c3373d93dd30" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9b871116-2545-4d61-b29c-ddee047ec24b" name="int profileId" direction="In" isUnique="false">
+                  <elementDefinition Id="f98fdea9-4487-48b6-aa42-2587d952ea1f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="516d9dc4-d593-474b-9b7d-9a44b20df8cb" name="SaveProfile" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="41000582-db5c-4242-8ce1-08d19303701b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7eab5782-55a4-45a8-a496-95db5aea1843" name="Profile profile" direction="In" isUnique="false">
+                  <elementDefinition Id="2c8c585e-6a87-4ff0-a9c4-3feea450f71a" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="51c7f167-3476-4868-bd98-8fc9d1117142" name="List&lt;ProfileAttribute&gt; attributes" direction="In" isUnique="false">
+                  <elementDefinition Id="14711e98-665a-4707-b5bb-2f8b0b42d9e8" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="830d073f-2c98-4caf-806c-d22d849a319c" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4c87d88b-f805-4187-834e-2970d97c9697" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="fb3c3db1-04aa-46cf-805c-de0a70f7855c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="62eae97a-f70a-4f4b-8237-0411a1b4b082" name="RegisterResult" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="990d478c-0019-4a8f-9828-130f67902ef2" />
+        <ownedAttributesInternal>
+          <property Id="f2a3c565-7440-471c-b04b-e91938ed4dad" name="ErrorMessage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="37054711-deb3-47aa-a713-9964b46c49e7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="830d073f-2c98-4caf-806c-d22d849a319c" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="9a4b3654-49cb-4856-813b-08dbf5374bd1" name="IsSuccess" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="23382582-2bc3-4057-92b9-360d39dbe37c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4c87d88b-f805-4187-834e-2970d97c9697" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="901bd95d-df46-4bb1-bd43-5baa1b6dd2c4" name="AgileSharp.SNS.Design">
+    <elementDefinition Id="7f79262c-7bab-47d9-b9e7-b2f5c99fb153" />
+    <profileInstances>
+      <packageHasProfileInstances Id="22a48350-f2ae-40d1-91d9-63ed648ee9b9">
+        <profileInstance Id="a7f60149-639c-4625-864f-355a7a5648e2" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="088305b9-d4c6-4c69-85bb-511087ddce24">
+        <profileInstance Id="6620c058-fb05-4487-9593-dc0eb2a449fc" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

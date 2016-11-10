@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{17133D7A-0F02-4C1C-B19D-303FCBF7DB9D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileSharp.SNS.Services</RootNamespace>
+    <AssemblyName>AgileSharp.SNS.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\Libs\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\Libs\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authenticate\JanrainAuthenticate.cs" />
+    <Compile Include="Implementation\AccountService.cs" />
+    <Compile Include="Authenticate\AuthenticateFactory.cs" />
+    <Compile Include="Authenticate\AuthenticateType.cs" />
+    <Compile Include="Authenticate\DefaultAuthenticateStrategy.cs" />
+    <Compile Include="Authenticate\IAuthenticateStrategy.cs" />
+    <Compile Include="Implementation\ProfileService.cs" />
+    <Compile Include="Interfaces\IAccountService.cs" />
+    <Compile Include="Interfaces\IAlertService.cs" />
+    <Compile Include="Interfaces\IFileService.cs" />
+    <Compile Include="Interfaces\IFriendService.cs" />
+    <Compile Include="Interfaces\IGroupService.cs" />
+    <Compile Include="Interfaces\IMessageService.cs" />
+    <Compile Include="Interfaces\IPermissionService.cs" />
+    <Compile Include="Interfaces\IProductService.cs" />
+    <Compile Include="Interfaces\IProfileService.cs" />
+    <Compile Include="Interfaces\ITermService.cs" />
+    <Compile Include="Implementation\ProductService.cs" />
+    <Compile Include="Mappings\ProductMapper.cs" />
+    <Compile Include="Messages\CategoryResponse.cs" />
+    <Compile Include="Messages\DownloadTrackResponse.cs" />
+    <Compile Include="Messages\ProductTrackRequest.cs" />
+    <Compile Include="Messages\SearchProductRequest.cs" />
+    <Compile Include="Messages\SearchProductResponse.cs" />
+    <Compile Include="Messages\SaveProductRequest.cs" />
+    <Compile Include="Mappings\AccountGradeMapper.cs" />
+    <Compile Include="Mappings\AccountMapper.cs" />
+    <Compile Include="Mappings\ProfileMapper.cs" />
+    <Compile Include="Mappings\TermMapper.cs" />
+    <Compile Include="Messages\AccountGradeResponse.cs" />
+    <Compile Include="Messages\GetTermResponse.cs" />
+    <Compile Include="Messages\LoginRequest.cs" />
+    <Compile Include="Messages\LoginResponse.cs" />
+    <Compile Include="Messages\ProfileRequest.cs" />
+    <Compile Include="Messages\ProfileResponse.cs" />
+    <Compile Include="Messages\RegisterRequest.cs" />
+    <Compile Include="Messages\RegisterResponse.cs" />
+    <Compile Include="Messages\ResponseBase.cs" />
+    <Compile Include="Messages\SearchAccountRequest.cs" />
+    <Compile Include="Messages\SearchAccountResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceHelper.cs" />
+    <Compile Include="Implementation\TermService.cs" />
+    <Compile Include="ViewModels\AccountGradeViewModel.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\DownloadTrackViewModel.cs" />
+    <Compile Include="ViewModels\FileInfoViewModel.cs" />
+    <Compile Include="ViewModels\FolderViewModel.cs" />
+    <Compile Include="ViewModels\FriendViewModel.cs" />
+    <Compile Include="ViewModels\PermissionViewModel.cs" />
+    <Compile Include="ViewModels\ProductAttributeViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\ProfileAttributeViewModel.cs" />
+    <Compile Include="ViewModels\ProfileViewModel.cs" />
+    <Compile Include="ViewModels\TermViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgileSharp.SNS.Infrastructure\AgileSharp.SNS.Infrastructure.csproj">
+      <Project>{4D3E3841-91A3-4959-8628-A57C7871B540}</Project>
+      <Name>AgileSharp.SNS.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileSharp.SNS.Model\AgileSharp.SNS.Model.csproj">
+      <Project>{771902AE-40A9-4040-8B53-4071B18E27CA}</Project>
+      <Name>AgileSharp.SNS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Interfaces\ClassDiagram1.cd" />
+    <None Include="Messages\ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

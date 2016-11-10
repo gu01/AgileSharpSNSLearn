@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Permission">
+  <logicalClassDesignerModelMoniker Id="2be3b07a-47bc-4fc0-83e2-4c8f8dbb4893" />
+  <nestedChildShapes>
+    <classShape Id="0dde6f97-c0b1-4633-bb43-034dbe0d0b60" absoluteBounds="5.625, 0.75, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="d8f820a8-c69c-4b85-97ed-a953def6dc0e" LastKnownName="Permission" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="edc9b75b-4b42-4db2-afb1-1d76f790a04c" absoluteBounds="5.6400000000000006, 1.1400000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="27630f67-48ee-495c-b859-2b69d007c484" absoluteBounds="5.6400000000000006, 1.3511718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <interfaceShape Id="7c111e13-73ca-4843-8d83-b2cea20cf1a9" absoluteBounds="1.5, 2.875, 2.5, 1.5429687152306233" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="32957243-b4c8-49cd-bd49-acea5dda4380" LastKnownName="IPermissionRepository" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="92431489-1d7f-4196-8f8f-01ef2346f273" absoluteBounds="1.515, 3.2649999999999997, 2.4699999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="0e993a37-8c21-45bb-80d8-b14f888be59c" absoluteBounds="1.515, 3.4761718675494198, 2.4699999999999998, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+    <interfaceShape Id="289433a4-2c73-42b7-9d19-115f71345407" absoluteBounds="1.5, 0.875, 3.125, 1.7031249602635703" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="2ff17abf-0d37-42b9-a536-6e64a29d13ac" LastKnownName="IPermissionService" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="7d4bfbd2-9936-4e27-9a05-53b61901c435" absoluteBounds="1.515, 1.2650000000000001, 3.0949999999999998, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="4748093e-8ea0-4ac8-9969-272dbeb0d14f" absoluteBounds="1.515, 1.6363281125823657, 3.0949999999999998, 0.84179684768120455" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>
